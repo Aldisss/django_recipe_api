@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      # this tell we're going to have
+      # service called app
+      # which the current directory is . or here
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    command: >
+      sh -C "python manage.py runserver 0.0.0.0:8000"
